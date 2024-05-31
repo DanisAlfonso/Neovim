@@ -51,5 +51,5 @@ This configuration uses `lazy.nvim` as the plugin manager. Here are some of the 
 To install this configuration, clone the repository and place the `init.lua` file in your Neovim configuration directory, usually located at `~/.config/nvim`.
 
 ```sh
-git clone <repository_url> ~/.config/nvim
+git clone https://github.com/DanisAlfonso/nvim ~/.config/nvim
 
