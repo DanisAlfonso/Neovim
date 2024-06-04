@@ -9,4 +9,10 @@ return {
 	},
 	config = true,
 	"Civitasv/cmake-tools.nvim",
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	"xiyaowong/transparent.nvim",
+	"olimorris/onedarkpro.nvim",
+	priority = 1000,
 }
