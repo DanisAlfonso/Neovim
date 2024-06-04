@@ -8,4 +8,5 @@ return {
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
 	config = true,
+	"Civitasv/cmake-tools.nvim",
 }

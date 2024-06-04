@@ -76,7 +76,7 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Add your custom keymap here
-vim.keymap.set("n", "<leader>da", "ggVGd", { noremap = true, silent = true, desc = "Delete all contents" })
+vim.keymap.set("n", "<leader>da", "ggVGdi", { noremap = true, silent = true, desc = "Delete all contents" })
 vim.keymap.set("n", "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all contents" })
 
 -- Diagnostic keymaps
@@ -805,7 +805,7 @@ require("lazy").setup({
 	-- require 'danny.plugins.debug',
 	-- require 'danny.plugins.indent_line',
 	-- require 'danny.plugins.lint',
-	-- require 'danny.plugins.autopairs',
+	require("danny.plugins.autopairs"),
 	require("danny.plugins.neo-tree"),
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
