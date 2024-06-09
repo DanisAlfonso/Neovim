@@ -80,9 +80,28 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Remap 'ff' to 'esc' in insert mode for quicker exit from insert mode
+vim.keymap.set("i", "ff", "<esc>", { noremap = true, silent = true, desc = "Map ff to escape" })
+
 -- Add your custom keymap here
 vim.keymap.set("n", "<leader>da", "ggVGdi", { noremap = true, silent = true, desc = "Delete all contents" })
 vim.keymap.set("n", "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all contents" })
+
+-- Remap 'Ctrl-f' to move forward by one character in insert mode
+vim.keymap.set(
+	"i",
+	"<C-f>",
+	"<Right>",
+	{ noremap = true, silent = true, desc = "Move cursor forward by one character" }
+)
+
+-- Remap 'Ctrl-b' to move backward by one character in insert mode
+vim.keymap.set(
+	"i",
+	"<C-b>",
+	"<Left>",
+	{ noremap = true, silent = true, desc = "Move cursor backward by one character" }
+)
 
 -- Custom key mapping to insert ' = ' in insert mode
 vim.keymap.set("i", "jj", "<esc>la = ", { noremap = true, silent = true, desc = "Insert = with spaces at end" })
