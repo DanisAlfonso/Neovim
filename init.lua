@@ -12,6 +12,11 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Set tab width to 4 spaces
+vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -78,6 +83,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Add your custom keymap here
 vim.keymap.set("n", "<leader>da", "ggVGdi", { noremap = true, silent = true, desc = "Delete all contents" })
 vim.keymap.set("n", "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all contents" })
+
+-- Custom key mapping to insert ' = ' in insert mode
+vim.keymap.set("i", "jj", "<esc>la = ", { noremap = true, silent = true, desc = "Insert = with spaces at end" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -799,9 +807,9 @@ require("lazy").setup({
 	--  Here are some example plugins that I've included in the danny repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
 	--
-	-- require 'danny.plugins.debug',
-	-- require 'danny.plugins.indent_line',
-	-- require 'danny.plugins.lint',
+	require("danny.plugins.debug"),
+	require("danny.plugins.indent_line"),
+	require("danny.plugins.lint"),
 	require("danny.plugins.autopairs"),
 	require("danny.plugins.neo-tree"),
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
@@ -809,8 +817,6 @@ require("lazy").setup({
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.
 	--
-	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
 	{ import = "custom.plugins" },
 }, {
 	ui = {
