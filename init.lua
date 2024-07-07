@@ -65,6 +65,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Enable true color support
+vim.opt.termguicolors = true
+
 -- [[ Basic Keymaps ]]
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
@@ -432,8 +435,8 @@ require("lazy").setup({
 				clangd = {},
 				-- gopls = {},
 				pyright = {},
-				rust_analyzer = {},
-				tsserver = {},
+				--rust_analyzer = {},
+				--tsserver = {},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -621,25 +624,36 @@ require("lazy").setup({
 			})
 		end,
 	},
-
 	{
-		-- Change the name of the colorscheme plugin below, and then
-		-- change the command in the config to whatever the name of that colorscheme is.
-		--
-		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-		"folke/tokyonight.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("onedark")
+		"projekt0n/github-nvim-theme",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require("github-theme").setup({
+				-- ...
+			})
 
-			-- You can configure highlights by doing something like:
-			vim.cmd.hi("Comment gui=none")
+			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
-
+	--{
+	--	"Tsuzat/NeoSolarized.nvim",
+	--	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	--	priority = 1000, -- make sure to load this before all the other start plugins
+	--	config = function()
+	--		vim.cmd([[ colorscheme NeoSolarized ]])
+	--	end,
+	--},
+	--{
+	--	"tiagovla/tokyodark.nvim",
+	--	opts = {
+	--		-- custom options here
+	--	},
+	--	config = function(_, opts)
+	--		require("tokyodark").setup(opts) -- calling setup is optional
+	--		vim.cmd([[colorscheme tokyodark]])
+	--	end,
+	--},
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
