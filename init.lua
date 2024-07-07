@@ -76,13 +76,7 @@ require("lazy").setup({
 	require("danny.plugins.lspconfig"),
 	require("danny.plugins.conform"),
 	require("danny.plugins.nvim-cmp"),
-
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
+	require("danny.theme"), -- Load theme configuration
 
 	-- Highlight todo, notes, etc in comments
 	{
