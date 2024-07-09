@@ -30,6 +30,7 @@ require("lazy").setup({
 	-- require('Comment').setup({})
 
 	-- "gc" to comment visual regions/lines
+	-- Theme
 	{ "numToStr/Comment.nvim", opts = {} },
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -71,7 +72,13 @@ require("lazy").setup({
 			}, { mode = "v" })
 		end,
 	},
-
+	-- Add the catppuccin theme plugin
+    {
+		"catppuccin/nvim",
+		as = "catppuccin",
+		lazy = false,
+		priority = 1000,
+	},
 	require("danny.plugins.telescope"),
 	require("danny.plugins.lspconfig"),
 	require("danny.plugins.conform"),
