@@ -1,6 +1,6 @@
 # Neovim Configuration
 
-![Neovim Configuration](./screenshot.png)
+![Neovim Configuration](https://github.com/user-attachments/assets/3d3cf3f4-9fbb-455c-9885-7af3c4096e8d)
 
 For some, myself included, it can be quite hard to fathom how one can devote so much time to playing around with a text editor, and yet, I must admit, it’s undoubtedly a charming form of procrastination. Many years ago, I delved into the world of Arch Linux, which is where I first dipped my toes into the waters of Vim; eventually, I migrated to Emacs, and now, for reasons that elude even me, I've found myself back in the embrace of Vim—Neovim, to be precise. While I do appreciate the sleek and modern features of contemporary text editors and IDEs, it seems that, in the absence of more pressing engagements, I am drawn back to these minimalist command-line tools. Perhaps it's the simplicity that appeals to me, or maybe it's just an excuse to avoid more important tasks, but either way, I find myself continually returning to this tinkering.
 
