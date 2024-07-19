@@ -12,13 +12,6 @@ return {
 	},
 	{ "Civitasv/cmake-tools.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{
-		"xiyaowong/transparent.nvim",
-		config = function()
-			require("transparent").clear_prefix("NeoTree")
-			require("transparent").clear_prefix("lualine")
-		end,
-	},
 	{ "olimorris/onedarkpro.nvim" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{

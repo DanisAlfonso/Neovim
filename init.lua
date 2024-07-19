@@ -73,11 +73,31 @@ require("lazy").setup({
 		end,
 	},
 	-- Add the catppuccin theme plugin
-    {
+	{
 		"catppuccin/nvim",
 		as = "catppuccin",
 		lazy = false,
 		priority = 1000,
+	},
+	-- Add the Codeium plugin
+	{
+		"Exafunction/codeium.vim",
+		event = "VimEnter",
+		config = function()
+			-- Set up Codeium if needed
+			vim.keymap.set("i", "<C-g>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<C-;>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<C-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+			vim.keymap.set("i", "<C-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+		end,
 	},
 	require("danny.plugins.telescope"),
 	require("danny.plugins.lspconfig"),
@@ -124,6 +144,16 @@ require("lazy").setup({
 			-- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
 	},
+	{
+		"MeanderingProgrammer/markdown.nvim",
+		name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		config = function()
+			require("render-markdown").setup({})
+		end,
+	},
 
 	-- Extra plugins
 	require("danny.plugins.debug"),
@@ -135,6 +165,7 @@ require("lazy").setup({
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	{ import = "custom.plugins" },
+	require("custom.plugins.neorg"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
