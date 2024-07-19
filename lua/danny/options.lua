@@ -79,3 +79,11 @@ vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "0", "g0", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "$", "g$", { noremap = true, silent = true })
+
+-- Keymap to call the word count function
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>wc",
+	':lua require("danny.wordcount").word_count()<CR>',
+	{ noremap = true, silent = true }
+)

@@ -2,8 +2,8 @@
 
 require("danny.options")
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-- Load word count function
+local wordcount = require("danny.wordcount")
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
