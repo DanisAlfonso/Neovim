@@ -1,4 +1,5 @@
 -- Load options
+
 require("danny.options")
 
 -- [[ Basic Autocommands ]]

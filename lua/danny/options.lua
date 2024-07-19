@@ -67,3 +67,15 @@ vim.opt.scrolloff = 10
 
 -- Enable true color support
 vim.opt.termguicolors = true
+
+-- Enable soft wrapping
+vim.o.wrap = true
+-- Use visual line mode with j and k
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
+
+-- Move cursor by display lines when wrap is enabled
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "0", "g0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "$", "g$", { noremap = true, silent = true })
