@@ -103,6 +103,7 @@ require("lazy").setup({
 	require("danny.plugins.lspconfig"),
 	require("danny.plugins.conform"),
 	require("danny.plugins.nvim-cmp"),
+	require("danny.plugins.nvim-tree"),
 	require("danny.theme"), -- Load theme configuration
 
 	-- Highlight todo, notes, etc in comments

@@ -1,5 +1,6 @@
 -- [[ Basic Keymaps ]]
-
+-- Keymap to toggle NvimTree
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -7,17 +8,17 @@ vim.keymap.set("n", "<leader>da", "ggVGdi", { noremap = true, silent = true, des
 vim.keymap.set("n", "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all contents" })
 
 vim.keymap.set(
-    "i",
-    "<C-f>",
-    "<Right>",
-    { noremap = true, silent = true, desc = "Move cursor forward by one character" }
+	"i",
+	"<C-f>",
+	"<Right>",
+	{ noremap = true, silent = true, desc = "Move cursor forward by one character" }
 )
 
 vim.keymap.set(
-    "i",
-    "<C-b>",
-    "<Left>",
-    { noremap = true, silent = true, desc = "Move cursor backward by one character" }
+	"i",
+	"<C-b>",
+	"<Left>",
+	{ noremap = true, silent = true, desc = "Move cursor backward by one character" }
 )
 
 vim.keymap.set("i", "jj", "<esc>la = ", { noremap = true, silent = true, desc = "Insert = with spaces at end" })
@@ -61,20 +62,19 @@ vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Fi
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 vim.keymap.set("n", "<leader>/", function()
-    builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        winblend = 10,
-        previewer = false,
-    }))
+	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		winblend = 10,
+		previewer = false,
+	}))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
 vim.keymap.set("n", "<leader>s/", function()
-    builtin.live_grep({
-        grep_open_files = true,
-        prompt_title = "Live Grep in Open Files",
-    })
+	builtin.live_grep({
+		grep_open_files = true,
+		prompt_title = "Live Grep in Open Files",
+	})
 end, { desc = "[S]earch [/] in Open Files" })
 
 vim.keymap.set("n", "<leader>sn", function()
-    builtin.find_files({ cwd = vim.fn.stdpath("config") })
+	builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[S]earch [N]eovim files" })
-
