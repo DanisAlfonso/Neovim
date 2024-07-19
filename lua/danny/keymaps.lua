@@ -1,3 +1,4 @@
+vim.api.nvim_set_keymap("n", "<leader>ns", ":Noice telescope<CR>", { noremap = true, silent = true })
 -- [[ Basic Keymaps ]]
 -- Keymap to toggle NvimTree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

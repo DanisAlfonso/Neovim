@@ -50,28 +50,6 @@ require("lazy").setup({
 		},
 	},
 
-	{ -- Useful plugin to show you pending keybinds.
-		"folke/which-key.nvim",
-		event = "VimEnter", -- Sets the loading event to 'VimEnter'
-		config = function() -- This is the function that runs, AFTER loading
-			require("which-key").setup()
-
-			-- Document existing key chains
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-				["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-				["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
-			})
-			-- visual mode
-			require("which-key").register({
-				["<leader>h"] = { "Git [H]unk" },
-			}, { mode = "v" })
-		end,
-	},
 	-- Add the catppuccin theme plugin
 	{
 		"catppuccin/nvim",
@@ -79,89 +57,26 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
-	-- Add the Codeium plugin
-	{
-		"Exafunction/codeium.vim",
-		event = "VimEnter",
-		config = function()
-			-- Set up Codeium if needed
-			vim.keymap.set("i", "<C-g>", function()
-				return vim.fn["codeium#Accept"]()
-			end, { expr = true })
-			vim.keymap.set("i", "<C-;>", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, { expr = true })
-			vim.keymap.set("i", "<C-,>", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, { expr = true })
-			vim.keymap.set("i", "<C-x>", function()
-				return vim.fn["codeium#Clear"]()
-			end, { expr = true })
-		end,
-	},
-	require("danny.plugins.telescope"),
-	require("danny.plugins.lspconfig"),
-	require("danny.plugins.conform"),
-	require("danny.plugins.nvim-cmp"),
-	require("danny.plugins.nvim-tree"),
-	require("danny.theme"), -- Load theme configuration
 
-	-- Highlight todo, notes, etc in comments
-	{
-		"folke/todo-comments.nvim",
-		event = "VimEnter",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
-	},
-	{ -- Highlight, edit, and navigate code
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
-			-- Autoinstall languages that are not installed
-			auto_install = true,
-			highlight = {
-				enable = true,
-				-- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-				-- If you are experiencing weird indenting issues, add the language to
-				-- the list of additional_vim_regex_highlighting and disabled languages for indent.
-				additional_vim_regex_highlighting = { "ruby" },
-			},
-			indent = { enable = true, disable = { "ruby" } },
-		},
-		config = function(_, opts)
-			-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
-			-- Prefer git instead of curl in order to improve connectivity in some environments
-			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-
-			-- There are additional nvim-treesitter modules that you can use to interact
-			-- with nvim-treesitter. You should go explore a few and see what interests you:
-			--
-			-- - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-			-- - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-			-- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		end,
-	},
-	{
-		"MeanderingProgrammer/markdown.nvim",
-		name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-		config = function()
-			require("render-markdown").setup({})
-		end,
-	},
-
-	-- Extra plugins
 	require("danny.plugins.debug"),
 	require("danny.plugins.indent_line"),
 	require("danny.plugins.lint"),
 	require("danny.plugins.autopairs"),
 	require("danny.plugins.neo-tree"),
+	require("danny.plugins.noice"),
+	require("danny.plugins.zen-mode"),
+	require("danny.plugins.treesitter"),
+	require("danny.plugins.which-key"),
+	require("danny.plugins.todo-comments"),
+	require("danny.plugins.markdown"),
+
+	require("danny.plugins.telescope"),
+	require("danny.plugins.lspconfig"),
+	require("danny.plugins.conform"),
+	require("danny.plugins.nvim-cmp"),
+	require("danny.plugins.nvim-tree"),
+	require("danny.theme"),
+
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
