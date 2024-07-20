@@ -1,3 +1,30 @@
+-- Use visual line mode with j and k
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
+
+-- Move cursor by display lines when wrap is enabled
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "0", "g0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "$", "g$", { noremap = true, silent = true })
+
+-- Oil.nvim
+vim.api.nvim_set_keymap("n", "<leader>o", ":Oil<CR>", { noremap = true, silent = true })
+
+-- Keymap to call the word count function
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>wc",
+	':lua require("danny.wordcount").word_count()<CR>',
+	{ noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>zm",
+	':lua require("zen-mode").toggle(); vim.fn.system({"wezterm", "cli", "set-user-var", "ZEN_MODE", "+4"})<CR>',
+	{ noremap = true, silent = true }
+)
 vim.api.nvim_set_keymap("n", "<leader>ns", ":Noice telescope<CR>", { noremap = true, silent = true })
 -- [[ Basic Keymaps ]]
 -- Keymap to toggle NvimTree

@@ -1,3 +1,4 @@
+-- ~/.config/nvim/lua/danny/plugins/zen-mode.lua
 return {
 	"folke/zen-mode.nvim",
 	config = function()
@@ -6,8 +7,8 @@ return {
 			-- or leave it empty to use the default settings
 			window = {
 				backdrop = 0.95,
-				width = 130, -- width of the Zen window
-				height = 1, -- height of the Zen window
+				width = 120, -- width of the zen window
+				height = 1, -- height of the zen window
 				options = {
 					signcolumn = "no", -- disable signcolumn
 					number = false, -- disable number column
@@ -24,17 +25,17 @@ return {
 					ruler = false, -- disables the ruler text in the cmd line area
 					showcmd = false, -- disables the command in the last line of the screen
 				},
-				twilight = { enabled = true }, -- enable Twilight (if installed)
+				twilight = { enabled = true }, -- enable twilight (if installed)
 				gitsigns = { enabled = false }, -- disables git signs
 				tmux = { enabled = false }, -- disables the tmux statusline
-				kitty = {
-					enabled = false,
-					font = "+4", -- font size increment
+				wezterm = {
+					enabled = true, -- enable wezterm integration
+					font = "+1", -- font size increment
 				},
 			},
-			-- callback where you can add custom code when the Zen window opens
+			-- callback where you can add custom code when the zen window opens
 			on_open = function(win) end,
-			-- callback where you can add custom code when the Zen window closes
+			-- callback where you can add custom code when the zen window closes
 			on_close = function() end,
 		})
 	end,
