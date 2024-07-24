@@ -15,13 +15,6 @@ return {
 	{ "olimorris/onedarkpro.nvim" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("lualine").setup()
-		end,
-	},
-	{
 		"rcarriga/nvim-notify",
 		config = function()
 			require("notify").setup({

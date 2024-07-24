@@ -30,7 +30,7 @@ return {
 				tmux = { enabled = false }, -- disables the tmux statusline
 				wezterm = {
 					enabled = true, -- enable wezterm integration
-					font = "+1", -- font size increment
+					font = "+4", -- font size increment
 				},
 			},
 			-- callback where you can add custom code when the zen window opens

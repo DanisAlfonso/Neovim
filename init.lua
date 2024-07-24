@@ -77,6 +77,7 @@ require("lazy").setup({
 	require("danny.plugins.conform"),
 	require("danny.plugins.nvim-cmp"),
 	require("danny.plugins.nvim-tree"),
+	require("danny.plugins.lualine"),
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
