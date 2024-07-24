@@ -1,3 +1,4 @@
+-- ~/.config/nvim/lua/danny/plugins/nvim-tree.lua
 return {
 	"nvim-tree/nvim-tree.lua",
 	requires = {
@@ -5,9 +6,6 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
 			renderer = {
 				highlight_opened_files = "all",
 				highlight_git = true,
@@ -29,6 +27,11 @@ return {
 				local function opts(desc)
 					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 				end
+
+				-- Default mappings
+				api.config.mappings.default_on_attach(bufnr)
+
+				-- Custom mappings
 				vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
 			end,
 		})

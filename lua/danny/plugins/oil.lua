@@ -1,9 +1,7 @@
 return {
 	"stevearc/oil.nvim",
-	config = function()
-		require("oil").setup({
-			-- Your configuration options here
-			-- See https://github.com/stevearc/oil.nvim for available options
-		})
-	end,
+	opts = {},
+	-- Optional dependencies
+	-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 }
