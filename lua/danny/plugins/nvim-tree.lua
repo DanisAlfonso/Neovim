@@ -23,12 +23,14 @@ return {
 			view = {
 				width = 30,
 				side = "left",
-				mappings = {
-					list = {
-						{ key = "u", action = "dir_up" },
-					},
-				},
 			},
+			on_attach = function(bufnr)
+				local api = require("nvim-tree.api")
+				local function opts(desc)
+					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+				end
+				vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
+			end,
 		})
 	end,
 }

@@ -28,5 +28,9 @@ return {
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 		})
+		require("notify").setup({
+			background_colour = "#1e1e1e", -- Set your desired background color here
+		})
+		vim.notify = require("notify")
 	end,
 }
