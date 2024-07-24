@@ -1,3 +1,4 @@
+-- ~/.config/nvim/lua/danny/plugins/transparent.lua
 return {
 	"xiyaowong/transparent.nvim",
 	config = function()
@@ -31,10 +32,13 @@ return {
 			},
 			extra_groups = { -- additional groups for specific plugins and UI elements
 				"NormalFloat", -- floating windows
+				"FloatBorder", -- floating window borders
 				"NvimTreeNormal", -- NeoTree
 				--"WhichKeyFloat", -- WhichKey plugin
 				"TelescopeNormal", -- Telescope plugin
 				"LualineNormal", -- Lualine
+				"TermNormal", -- Toggleterm normal terminals
+				"TermFloat", -- Toggleterm floating terminals
 				-- add other groups as needed
 			},
 			exclude_groups = {}, -- groups to exclude from transparency

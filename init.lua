@@ -71,6 +71,7 @@ require("lazy").setup({
 	require("danny.plugins.todo-comments"),
 	require("danny.plugins.markdown"),
 	require("danny.plugins.oil"),
+	require("danny.plugins.toggleterm"),
 
 	require("danny.plugins.telescope"),
 	require("danny.plugins.lspconfig"),

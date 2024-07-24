@@ -1,3 +1,5 @@
+-- ~/.config/nvim/lua/danny/keymaps.lua
+
 -- Use visual line mode with j and k
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
@@ -26,9 +28,11 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>ns", ":Noice telescope<CR>", { noremap = true, silent = true })
+
 -- [[ Basic Keymaps ]]
 -- Keymap to toggle NvimTree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -106,3 +110,8 @@ end, { desc = "[S]earch [/] in Open Files" })
 vim.keymap.set("n", "<leader>sn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[S]earch [N]eovim files" })
+
+-- Toggleterm keymaps
+vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>lua toggle_horizontal()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>lua toggle_vertical()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>lua toggle_float()<CR>", { noremap = true, silent = true })
