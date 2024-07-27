@@ -72,7 +72,7 @@ require("lazy").setup({
 	require("danny.plugins.markdown"),
 	require("danny.plugins.oil"),
 	require("danny.plugins.toggleterm"),
-
+	require("danny.plugins.lazygit"),
 	require("danny.plugins.telescope"),
 	require("danny.plugins.lspconfig"),
 	require("danny.plugins.conform"),
