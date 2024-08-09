@@ -12,24 +12,38 @@ local function get_appearance()
 end
 
 local appearance = get_appearance()
-local theme_flavour = appearance == "dark" and "mocha" or "latte"
 
--- Setup Catppuccin theme
-local theme = {
-	"catppuccin/nvim",
-	name = "catppuccin",
+-- Setup Flow theme
+local flow_theme = {
+	"0xstepit/flow.nvim",
 	lazy = false,
 	priority = 1000,
-	opts = {
-		flavour = theme_flavour, -- Mocha is the dark theme, Latte is the light theme
-	},
+	opts = {},
 	config = function()
-		require("catppuccin").setup({
-			flavour = theme_flavour,
+		require("flow").setup({
+			transparent = true,
+			fluo_color = "pink",
+			mode = "normal",
+			aggressive_spell = false,
 		})
-		vim.cmd("colorscheme catppuccin")
-		print("Using Catppuccin theme with flavour: " .. theme_flavour)
+		vim.cmd("colorscheme flow")
+		print("Using Flow theme")
 	end,
 }
+
+-- Setup Solarized Osaka theme
+local solarized_osaka_theme = {
+	"craftzdog/solarized-osaka.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {},
+	config = function()
+		vim.cmd("colorscheme solarized-osaka")
+		print("Using Solarized Osaka theme")
+	end,
+}
+
+-- Select which theme to use
+local theme = flow_theme -- Change this to `solarized_osaka_theme` if you want to use the Solarized Osaka theme by default
 
 return theme

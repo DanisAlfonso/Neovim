@@ -13,7 +13,7 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 -- Make line numbers default
 vim.opt.number = true
 -- One can also add relative line numbers, to help with jumping.
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"

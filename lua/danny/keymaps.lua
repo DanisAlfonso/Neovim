@@ -115,3 +115,11 @@ end, { desc = "[S]earch [N]eovim files" })
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>lua toggle_horizontal()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>lua toggle_vertical()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>lua toggle_float()<CR>", { noremap = true, silent = true })
+
+-- Custom keymap to show the relative path of the current file
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>fp",
+	':lua print(vim.fn.fnamemodify(vim.fn.expand("%"), ":~:."))<CR>',
+	{ noremap = true, silent = true }
+)

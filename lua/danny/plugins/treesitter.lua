@@ -13,5 +13,13 @@ return {
 	config = function(_, opts)
 		require("nvim-treesitter.install").prefer_git = true
 		require("nvim-treesitter.configs").setup(opts)
+
+		-- Associate .env.local files with bash syntax
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = { ".env.local" },
+			callback = function()
+				vim.bo.filetype = "sh"
+			end,
+		})
 	end,
 }

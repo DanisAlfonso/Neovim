@@ -52,12 +52,12 @@ require("lazy").setup({
 	},
 
 	-- Add the catppuccin theme plugin
-	{
-		"catppuccin/nvim",
-		as = "catppuccin",
-		lazy = false,
-		priority = 1000,
-	},
+	--{
+	--	"catppuccin/nvim",
+	--	as = "catppuccin",
+	--	lazy = false,
+	--	priority = 1000,
+	--},
 
 	require("danny.plugins.debug"),
 	require("danny.plugins.indent_line"),
@@ -79,6 +79,7 @@ require("lazy").setup({
 	require("danny.plugins.nvim-cmp"),
 	require("danny.plugins.nvim-tree"),
 	require("danny.plugins.lualine"),
+	require("danny.plugins.lean"),
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
