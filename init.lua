@@ -51,14 +51,6 @@ require("lazy").setup({
 		},
 	},
 
-	-- Add the catppuccin theme plugin
-	--{
-	--	"catppuccin/nvim",
-	--	as = "catppuccin",
-	--	lazy = false,
-	--	priority = 1000,
-	--},
-
 	require("danny.plugins.debug"),
 	require("danny.plugins.indent_line"),
 	require("danny.plugins.lint"),

@@ -12,6 +12,5 @@ return {
 	},
 	{ "Civitasv/cmake-tools.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{ "olimorris/onedarkpro.nvim" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 }

@@ -43,7 +43,51 @@ local solarized_osaka_theme = {
 	end,
 }
 
+-- Setup TokyoDark theme
+local tokyodark_theme = {
+	"tiagovla/tokyodark.nvim",
+	opts = {
+		-- custom options here
+	},
+	config = function(_, opts)
+		require("tokyodark").setup(opts) -- calling setup is optional
+		vim.cmd([[colorscheme tokyodark]])
+
+		-- Enable transparency
+		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		print("Using TokyoDark theme with transparency")
+	end,
+}
+
+-- Setup Aurora theme
+local aurora_theme = {
+	"ray-x/aurora",
+	init = function()
+		vim.g.aurora_italic = 1
+		vim.g.aurora_transparent = 1
+		vim.g.aurora_bold = 1
+	end,
+	config = function()
+		vim.cmd.colorscheme("aurora")
+		-- override defaults
+		vim.api.nvim_set_hl(0, "@number", { fg = "#e933e3" })
+		print("Using Aurora theme with custom highlights")
+	end,
+}
+
+-- Setup NeoSolarized theme
+local neosolarized_theme = {
+	"Tsuzat/NeoSolarized.nvim",
+	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	priority = 1000, -- make sure to load this before all the other start plugins
+	config = function()
+		vim.cmd([[colorscheme NeoSolarized]])
+		print("Using NeoSolarized theme")
+	end,
+}
+
 -- Select which theme to use
-local theme = flow_theme -- Change this to `solarized_osaka_theme` if you want to use the Solarized Osaka theme by default
+local theme = neosolarized_theme -- Change this to `flow_theme`, `tokyodark_theme`, `aurora_theme`, `solarized_osaka_theme`, or `neosolarized_theme` to use the respective theme by default
 
 return theme
