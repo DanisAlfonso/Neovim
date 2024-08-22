@@ -123,3 +123,11 @@ vim.api.nvim_set_keymap(
 	':lua print(vim.fn.fnamemodify(vim.fn.expand("%"), ":~:."))<CR>',
 	{ noremap = true, silent = true }
 )
+
+-- Mapping to convert `--` to an em dash in insert mode
+vim.api.nvim_set_keymap(
+	"i",
+	"--",
+	"<C-v>u2014",
+	{ noremap = true, silent = true, desc = "Convert `--` to an em dash (`—`)" }
+)

@@ -39,6 +39,7 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = bubbles_theme,
+				--theme = "NeoSolarized",
 				component_separators = "",
 				section_separators = { left = "", right = "" },
 			},
