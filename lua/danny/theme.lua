@@ -1,5 +1,3 @@
--- theme.lua
-
 local function get_appearance()
 	local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
 	local result = handle:read("*a")
@@ -12,6 +10,18 @@ local function get_appearance()
 end
 
 local appearance = get_appearance()
+
+-- Setup Monokai Nightasty theme
+local monokai_nightasty_theme = {
+	"polirritmico/monokai-nightasty.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {},
+	config = function()
+		vim.cmd("colorscheme monokai-nightasty")
+		print("Using Monokai Nightasty theme")
+	end,
+}
 
 -- Setup Flow theme
 local flow_theme = {
@@ -88,6 +98,6 @@ local neosolarized_theme = {
 }
 
 -- Select which theme to use
-local theme = neosolarized_theme -- Change this to `flow_theme`, `tokyodark_theme`, `aurora_theme`, `solarized_osaka_theme`, or `neosolarized_theme` to use the respective theme by default
+local theme = tokyodark_theme -- Change this to `kanagawa_theme`, `monokai_nightasty_theme`, `flow_theme`, `tokyodark_theme`, `aurora_theme`, `solarized_osaka_theme`, or `neosolarized_theme` to use the respective theme by default
 
 return theme
