@@ -1,5 +1,3 @@
--- Load options
-
 require("danny.options")
 
 -- Load word count function
@@ -22,11 +20,9 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-	-- Use `opts = {}` to force a plugin to be loaded.
 	-- This is equivalent to:
 	-- require('Comment').setup({})
 
@@ -72,6 +68,8 @@ require("lazy").setup({
 	require("danny.plugins.nvim-tree"),
 	require("danny.plugins.lualine"),
 	require("danny.plugins.lean"),
+	require("danny.plugins.avante"),
+
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
