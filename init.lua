@@ -69,14 +69,17 @@ require("lazy").setup({
 	require("danny.plugins.lualine"),
 	require("danny.plugins.lean"),
 	require("danny.plugins.avante"),
+	require("danny.plugins.slint"),
+	require("danny.plugins.cmake"),
+	require("danny.plugins.transparent"),
+	require("danny.plugins.neorg"),
 
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	{ import = "custom.plugins" },
-	require("custom.plugins.neorg"),
+	-- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
+	-- { import = "custom.plugins" }, -- Removed as we migrated everything to danny/plugins
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
