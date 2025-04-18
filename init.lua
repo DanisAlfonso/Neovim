@@ -73,7 +73,6 @@ require("lazy").setup({
 	require("danny.plugins.cmake"),
 	require("danny.plugins.transparent"),
 	require("danny.plugins.neorg"),
-
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
