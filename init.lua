@@ -73,6 +73,9 @@ require("lazy").setup({
 	require("danny.plugins.cmake"),
 	require("danny.plugins.transparent"),
 	require("danny.plugins.neorg"),
+	require("danny.plugins.nvim-training"), -- Add nvim-training plugin
+	require("danny.plugins.typr"),
+	require("danny.plugins.copilot"), -- Add GitHub Copilot
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
