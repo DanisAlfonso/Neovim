@@ -47,7 +47,16 @@ return {
 				end,
 			},
 			completion = { completeopt = "menu,menuone,noinsert" },
-
+			window = {
+				completion = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+				},
+				documentation = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+				},
+			},
 			mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item
 				["<C-n>"] = cmp.mapping.select_next_item(),

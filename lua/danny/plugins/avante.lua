@@ -7,6 +7,13 @@ return {
 	version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 	opts = {
 		-- add any opts here
+		provider = "gemini", -- Setting Gemini as the provider
+		gemini = {
+			-- @see https://ai.google.dev/gemini-api/docs/models/gemini
+			model = "gemini-2.5-flash-preview-04-17", -- Using the Gemini 2.5 Flash Preview version
+			temperature = 0,
+			max_tokens = 4096,
+		},
 	},
 	build = "make",
 	dependencies = {
