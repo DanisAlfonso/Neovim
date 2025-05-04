@@ -1,0 +1,129 @@
+# Neovim Cheat Sheet - Danny's Configuration
+
+╭────────────────────────────────────────────────────────────╮
+│                Neovim Cheat Sheet (2025)                   │
+╰────────────────────────────────────────────────────────────╯
+
+LEADER KEY: Space bar
+
+────────────────────────────
+      BASIC NAVIGATION
+────────────────────────────
+j, k, h, l                 Move cursor (down, up, left, right)
+gj, gk                     Move by display lines when wrapped
+Ctrl + f/b                 Move cursor forward/backward in insert mode
+<leader>?                  Show buffer-local keymaps (which-key)
+Ctrl + d/u                 Scroll down/up
+<leader>/                  Fuzzy search in current buffer
+
+────────────────────────────
+      WINDOW MANAGEMENT
+────────────────────────────
+Ctrl + h/j/k/l             Move between windows
+<leader>zm                 Toggle zen mode
+<leader>o                  Open Oil file explorer
+<leader>wc                 Count words in current file
+<leader>fp                 Show relative path of current file
+
+────────────────────────────
+      FILE OPERATIONS
+────────────────────────────
+<leader>sf                 Search files (Telescope)
+<leader>da                 Delete all contents
+<leader>sa                 Select all contents
+
+────────────────────────────
+         SEARCHING
+────────────────────────────
+<leader>sg                 Live grep (search text in files)
+<leader>ss                 Search select Telescope
+<leader>sw                 Search current word
+<leader>sd                 Search diagnostics
+<leader>sr                 Resume last search
+<leader>s.                 Search recent files
+<leader>s/                 Search in open files
+<leader>sn                 Search Neovim config files
+<leader>sh                 Search help tags
+<leader>sk                 Search keymaps
+
+────────────────────────────
+        DIAGNOSTICS
+────────────────────────────
+[d                         Go to previous diagnostic
+]d                         Go to next diagnostic
+<leader>e                  Show diagnostic error message
+<leader>q                  Open diagnostic quickfix list
+
+────────────────────────────
+       CODE ACTIONS
+────────────────────────────
+<leader>c                  Code actions group
+K                          Show hover documentation
+gd                         Go to definition
+gD                         Go to declaration
+gi                         Go to implementation
+gr                         Go to references
+<leader>rn                 Rename symbol
+
+────────────────────────────
+         TERMINAL
+────────────────────────────
+<leader>th                 Toggle horizontal terminal
+<leader>tv                 Toggle vertical terminal
+<leader>tf                 Toggle floating terminal
+<Esc><Esc>                 Exit terminal mode
+
+────────────────────────────
+        GIT COMMANDS
+────────────────────────────
+<leader>h                  Git hunk commands
+
+────────────────────────────
+         COPILOT
+────────────────────────────
+Ctrl + J                   Accept suggestion
+Ctrl + ]                   Next suggestion
+Ctrl + [                   Previous suggestion
+Esc                        Dismiss suggestion
+
+────────────────────────────
+     TEXT MANIPULATION
+────────────────────────────
+--                         Insert em dash (—)
+jj                         Escape from insert mode
+gc                         Comment toggle linewise
+gb                         Comment toggle blockwise
+gcc                        Comment current line
+gco/gcO                    Insert comment below/above
+gcA                        Insert comment at end of line
+
+────────────────────────────
+     PLUGINS & FEATURES
+────────────────────────────
+<leader>ns                 Noice telescope (notifications)
+<C-n>                      Toggle NvimTree
+<leader><leader>           Find existing buffers
+Ctrl + h/l/j/k             Move focus between windows
+<leader>t                  Toggle group (various toggles)
+
+────────────────────────────
+          MARKS
+────────────────────────────
+m[a-zA-Z]                  Set mark
+'[a-zA-Z]                  Jump to mark
+' or `                     View all marks with which-key
+
+────────────────────────────
+         REGISTERS
+────────────────────────────
+"[a-z]                     Access register
+" (in normal mode)         View all registers with which-key
+<C-r> (in insert mode)     Paste from register
+
+────────────────────────────
+           HELP
+────────────────────────────
+:checkhealth               Check Neovim health
+:Lazy                      Open plugin manager
+:Mason                     Open LSP/tool installer
+Space                      Show which-key menu 

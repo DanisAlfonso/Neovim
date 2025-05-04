@@ -102,4 +102,8 @@ require("lazy").setup({
 			lazy = "💤 ",
 		},
 	},
+	rocks = {
+		-- Disable hererocks to prevent warnings
+		hererocks = false,
+	}
 })

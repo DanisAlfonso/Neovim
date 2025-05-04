@@ -1,6 +1,10 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+	init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
+	end,
 	opts = {
 		-- Your configuration comes here
 		-- or leave it empty to use the default settings
@@ -22,6 +26,20 @@ return {
 				g = true, -- bindings for prefixed with g
 			},
 		},
+		win = {
+			border = "rounded",   -- none, single, double, shadow, rounded
+			padding = { 1, 2 }, -- [top/bottom, right/left]
+			title = true,
+			title_pos = "center",
+			no_overlap = true,
+		},
+		popup = {
+			position = "bottom", -- position of the popup: bottom, top
+		},
+		layout = {
+			spacing = 3,
+			width = { min = 20 },
+		},
 	},
 	keys = {
 		{
@@ -32,8 +50,8 @@ return {
 			desc = "Buffer Local Keymaps (which-key)",
 		},
 	},
-	config = function()
-		require("which-key").setup()
+	config = function(_, opts)
+		require("which-key").setup(opts)
 
 		-- Document existing key chains with the new format
 		require("which-key").add({

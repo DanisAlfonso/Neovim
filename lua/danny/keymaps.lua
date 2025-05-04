@@ -131,3 +131,16 @@ vim.api.nvim_set_keymap(
 	"<C-v>u2014",
 	{ noremap = true, silent = true, desc = "Convert `--` to an em dash (`—`)" }
 )
+
+-- Keep ;; mapping as a convenient alternative to Escape
+vim.keymap.set('i', ';;', '<Esc>', { noremap = true, desc = "Alternative escape from insert mode" })
+
+-- Add quick access to the cheatsheet
+vim.api.nvim_set_keymap(
+	"n", 
+	"<leader>?c", 
+	":e ~/.config/nvim/cheatsheet.txt<CR>", 
+	{ noremap = true, silent = true, desc = "Open Neovim Cheatsheet" }
+)
+
+

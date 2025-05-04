@@ -1,12 +1,39 @@
 return {
-  "github/copilot.vim",
-  event = "InsertEnter",
-  config = function()
-    -- Copilot setup
-    vim.g.copilot_no_tab_map = true
-    vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-    vim.g.copilot_filetypes = {
-      ["*"] = true,
-    }
-  end,
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        panel = {
+          enabled = true,
+          auto_refresh = true,
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<C-J>",
+            accept_word = false,
+            accept_line = false,
+            next = "<C-]>",
+            prev = "<C-[>",
+            dismiss = "<Esc>",
+          },
+        },
+        filetypes = {
+          ["*"] = true,
+        },
+      })
+      
+      -- Ensure Escape works properly in insert mode
+      vim.keymap.set("i", "<Esc>", function()
+        if require("copilot.suggestion").is_visible() then
+          require("copilot.suggestion").dismiss()
+        end
+        return "<Esc>"
+      end, { expr = true, noremap = true })
+    end,
+  }
 } 

@@ -70,3 +70,8 @@ vim.opt.termguicolors = true
 
 -- Enable soft wrapping
 vim.o.wrap = true
+
+-- Disable providers we don't need to avoid warnings
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python3_provider = 0
