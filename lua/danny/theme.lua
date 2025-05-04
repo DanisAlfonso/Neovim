@@ -97,7 +97,38 @@ local neosolarized_theme = {
 	end,
 }
 
+-- Setup TokyoNight theme
+local tokyonight_theme = {
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+		style = "night", -- The theme comes in four styles: "storm", "moon", "night" and "day"
+		transparent = true, -- Enable this to disable setting the background color
+		terminal_colors = true, -- Configure the colors used when opening a `:terminal`
+		styles = {
+			-- Style to be applied to different syntax groups
+			comments = { italic = true },
+			keywords = { italic = true },
+			functions = {},
+			variables = {},
+			-- Background styles. Can be "dark", "transparent" or "normal"
+			sidebars = "transparent",
+			floats = "transparent",
+		},
+		-- Set dim_inactive to true to dim inactive windows
+		dim_inactive = false,
+		-- Enable this to use the lualine_bold option
+		lualine_bold = true,
+	},
+	config = function(_, opts)
+		require("tokyonight").setup(opts)
+		vim.cmd([[colorscheme tokyonight]])
+		print("Using TokyoNight theme")
+	end,
+}
+
 -- Select which theme to use
-local theme = tokyodark_theme -- Change this to `kanagawa_theme`, `monokai_nightasty_theme`, `flow_theme`, `tokyodark_theme`, `aurora_theme`, `solarized_osaka_theme`, or `neosolarized_theme` to use the respective theme by default
+local theme = tokyonight_theme -- Change this to `kanagawa_theme`, `monokai_nightasty_theme`, `flow_theme`, `tokyodark_theme`, `aurora_theme`, `solarized_osaka_theme`, or `neosolarized_theme` to use the respective theme by default
 
 return theme
