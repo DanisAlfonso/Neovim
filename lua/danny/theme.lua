@@ -19,7 +19,6 @@ local monokai_nightasty_theme = {
 	opts = {},
 	config = function()
 		vim.cmd("colorscheme monokai-nightasty")
-		print("Using Monokai Nightasty theme")
 	end,
 }
 
@@ -37,7 +36,6 @@ local flow_theme = {
 			aggressive_spell = false,
 		})
 		vim.cmd("colorscheme flow")
-		print("Using Flow theme")
 	end,
 }
 
@@ -49,7 +47,6 @@ local solarized_osaka_theme = {
 	opts = {},
 	config = function()
 		vim.cmd("colorscheme solarized-osaka")
-		print("Using Solarized Osaka theme")
 	end,
 }
 
@@ -66,7 +63,6 @@ local tokyodark_theme = {
 		-- Enable transparency
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-		print("Using TokyoDark theme with transparency")
 	end,
 }
 
@@ -82,7 +78,6 @@ local aurora_theme = {
 		vim.cmd.colorscheme("aurora")
 		-- override defaults
 		vim.api.nvim_set_hl(0, "@number", { fg = "#e933e3" })
-		print("Using Aurora theme with custom highlights")
 	end,
 }
 
@@ -93,7 +88,6 @@ local neosolarized_theme = {
 	priority = 1000, -- make sure to load this before all the other start plugins
 	config = function()
 		vim.cmd([[colorscheme NeoSolarized]])
-		print("Using NeoSolarized theme")
 	end,
 }
 
@@ -124,7 +118,6 @@ local tokyonight_theme = {
 	config = function(_, opts)
 		require("tokyonight").setup(opts)
 		vim.cmd([[colorscheme tokyonight]])
-		print("Using TokyoNight theme")
 	end,
 }
 
