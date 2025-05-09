@@ -29,6 +29,11 @@ return {
 		config = function(_, opts)
 			-- Prefer git for parser installation
 			require("nvim-treesitter.install").prefer_git = true
+			
+			-- Use clang instead of gcc on macOS
+			if vim.fn.has("macunix") == 1 then
+				require("nvim-treesitter.install").compilers = { "clang", "gcc" }
+			end
 
 			-- Register the Ghostty parser
 			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
