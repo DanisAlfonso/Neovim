@@ -90,12 +90,29 @@ Esc                        Dismiss suggestion
      TEXT MANIPULATION
 ────────────────────────────
 --                         Insert em dash (—)
-jj                         Escape from insert mode
+;;                         Escape from insert mode
 gc                         Comment toggle linewise
 gb                         Comment toggle blockwise
 gcc                        Comment current line
 gco/gcO                    Insert comment below/above
 gcA                        Insert comment at end of line
+
+────────────────────────────
+    LANGUAGE LEARNING
+────────────────────────────
+<leader>t                  Translate word or selection with vim-translator
+<leader>w                  AI vocabulary lookup for word under cursor
+<leader>wh                 View history of vocabulary lookups
+
+────────────────────────────
+      TYPING PRACTICE
+────────────────────────────
+:Typr                      Start typing practice
+:TyprStats                 View typing statistics
+s                          Toggle symbols when in Typr
+n                          Toggle numbers when in Typr
+c                          Toggle case sensitivity in Typr
+q                          Quit Typr practice session
 
 ────────────────────────────
      PLUGINS & FEATURES
