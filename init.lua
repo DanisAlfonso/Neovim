@@ -75,6 +75,7 @@ require("lazy").setup({
 	require("danny.plugins.neorg"),
 	require("danny.plugins.typr"),
 	require("danny.plugins.copilot"), -- Add GitHub Copilot
+	require("danny.plugins.language-assistant"), -- Language learning assistant
 	require("danny.theme"),
 
 	-- require 'danny.plugins.gitsigns', -- adds gitsigns recommend keymaps
